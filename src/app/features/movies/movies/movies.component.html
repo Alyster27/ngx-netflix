@@ -1,0 +1,75 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-padding ion-margin-start">
+      <ion-img src="./assets/images/logo.svg"></ion-img>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content (ionscroll)="listenScroll($event)">
+<!-- highlight -->
+  <ion-grid class="highlight" *ngIf="highlight" [style.background-image]="'url(' + highlight?.backdrop_path + ')'">
+    <ion-row class="content ion-align-items-center ion-padding">
+      <ion-col size="12" size-md="4" class="ion-padding">
+        <ion-text color="light">
+          <h1>{{highlight.title}}</h1>
+          <p>{{highlight.overview}}</p>
+        </ion-text>
+        <ion-button>
+          preview
+        </ion-button>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+
+  <ion-grid>
+    <!-- trending movies -->
+    <ion-row *ngIf="trendings">
+      <ion-col size="12">
+        <ion-text>
+          <h2>Trending</h2>
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <div class="flexBox">
+          <div [hidden]="!m.poster_path" class="flexItem" *ngFor="let m of trendings" (click)="displayDetails(m)">
+            <ion-img [src]="m.poster_path"></ion-img>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- discover movies -->
+    <ion-row *ngIf="discovers">
+      <ion-col size="12">
+        <ion-text>
+          <h2>Discover</h2>
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <div class="flexBox">
+          <div [hidden]="!m.poster_path" class="flexItem" *ngFor="let m of discovers" (click)="displayDetails(m)">
+            <ion-img [src]="m.poster_path"></ion-img>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <!-- genres movies - Xn -->
+    <ion-row *ngFor="let g of genres">
+      <ion-col size="12">
+        <ion-text>
+          <h2>{{g.name}}</h2>
+        </ion-text>
+      </ion-col>
+      <ion-col size="12">
+        <div class="flexBox">
+          <div [hidden]="!m.poster_path" class="flexItem" *ngFor="let m of g.result" (click)="displayDetails(m)">
+            <ion-img [src]="m.poster_path"></ion-img>
+          </div>
+        </div>
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+</ion-content>
