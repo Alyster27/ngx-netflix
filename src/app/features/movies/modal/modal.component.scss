@@ -1,6 +1,12 @@
-ion-header {
-    background-color: black;
-}
-ion-button {
-    background: black;
+:host {
+    display: block;
+
+    ion-header {
+        ion-toolbar {
+            --background: rgba(0, 0, 0, 0);
+            --border-width: 0;
+            --border-style: none;
+            --border-color: transparent;
+        }
+    }
 }

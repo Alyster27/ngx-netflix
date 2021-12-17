@@ -1,6 +1,16 @@
 :host {
     display: block;
-    
+
+    h2 {
+        color: #fff;
+    }
+
+    //no scrollbar but not 100% effectiv
+    ::-webkit-scrollbar,
+    *::-webkit-scrollbar {
+        overflow: hidden;
+    }
+
     ion-header {
         background: rgba(0, 0, 0, 0.1);
         ion-img {

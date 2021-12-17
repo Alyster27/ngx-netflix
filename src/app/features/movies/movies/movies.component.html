@@ -5,7 +5,7 @@
     </ion-title>
   </ion-toolbar>
 </ion-header>
-<ion-content (ionscroll)="listenScroll($event)">
+<ion-content (ionscroll)="listenScroll($event)" class="no-scroll">
 <!-- highlight -->
   <ion-grid class="highlight" *ngIf="highlight" [style.background-image]="'url(' + highlight?.backdrop_path + ')'">
     <ion-row class="content ion-align-items-center ion-padding">
@@ -14,13 +14,12 @@
           <h1>{{highlight.title}}</h1>
           <p>{{highlight.overview}}</p>
         </ion-text>
-        <ion-button>
+        <ion-button (click)="displayDetails(highlight)">
           preview
         </ion-button>
       </ion-col>
     </ion-row>
   </ion-grid>
-
 
   <ion-grid>
     <!-- trending movies -->
