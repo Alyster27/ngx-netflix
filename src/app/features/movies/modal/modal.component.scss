@@ -1,12 +1,8 @@
 :host {
     display: block;
 
-    ion-header {
-        ion-toolbar {
-            --background: rgba(0, 0, 0, 0);
-            --border-width: 0;
-            --border-style: none;
-            --border-color: transparent;
-        }
+    div .toolbar-background {
+        background: rgba(0, 0, 0, 0);
+        
     }
 }

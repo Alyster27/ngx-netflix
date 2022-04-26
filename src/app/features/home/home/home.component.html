@@ -6,47 +6,42 @@
                     <ion-img src="./assets/images/logo.svg"></ion-img>
                 </ion-col>
                 <ion-col>
-                    <ion-button  color="dark" class="langButton">
-                        <ion-icon name="globe-outline"></ion-icon>
-                            <ion-select interface="popover" value="fr">
-                              <ion-select-option value="fr">Français</ion-select-option>
-                              <ion-select-option value="en">English</ion-select-option>
-                              <ion-select-option value="de">Deutsch</ion-select-option>
-                            </ion-select>
+                    <ion-button color="dark" class="langButton" (click)="openPopover($event)">
+                        <ion-text>{{ 'home.langue' | translate }}</ion-text>
+                        <ion-icon name="globe"></ion-icon>
                     </ion-button>
                 </ion-col>
                 <ion-col>
-                    <ion-button>S'identifier</ion-button>
+                    <ion-button>{{ 'home.button-1' | translate }}</ion-button>
                 </ion-col>
             </ion-row>
         </ion-toolbar>
     </div>
     <ion-grid class="ion-no-padding">
         <!-- first row section -->
-        <ion-row
-        [style.background-image]="'url(./assets/images/netflix-image-bg.jpg)'"
-        class="firstSection ion-align-items-center ion-justify-content-center">
+        <ion-row [style.background-image]="'url(./assets/images/netflix-image-bg.jpg)'"
+            class="firstSection ion-align-items-center ion-justify-content-center">
             <ion-col size-xs="12" size-md="8">
                 <ion-text color="light">
                     <h1 class="ion-margin-top ion-padding-top">
-                        Films, séries TV et bien plus en illimité.
+                        {{ 'home.h1-1' | translate }}
                     </h1>
                     <p class="large">
-                        Où que vous soyez. Annulez à tout moment.
+                        {{ 'home.p-1' | translate }}
                     </p>
                     <p>
-                        Prêt à regarder Netflix ? Saisissez votre adresse e-mail pour vous abonner ou réactiver votre abonnement.
+                        {{ 'home.p-2' | translate }}
                     </p>
                 </ion-text>
-            
+
                 <ion-item>
-                    <ion-input placeholder="Adresse e-mail"></ion-input>
+                    <ion-input placeholder="E-mail"></ion-input>
                     <ion-button size="large" routerLink="/movies" slot="end">
-                        Commencer
+                        {{ 'home.button-2' | translate }}
                         <ion-icon slot="end" size="small" name="chevron-forward-outline"></ion-icon>
                     </ion-button>
                 </ion-item>
-            </ion-col>  
+            </ion-col>
         </ion-row>
         <div class="concord-img-gradient"></div>
 
@@ -54,16 +49,15 @@
         <ion-row class="ion-align-items-center ion-padding">
             <ion-col size-xs="12" size-md="6">
                 <ion-text color="light">
-                    <h2>Regardez Netflix sur votre TV.</h2>
-                    <p>Regardez Netflix sur votre Smart TV, Playstation, Xbox, Chromecast, Apple TV, lecteurs Blu-ray et plus.</p>
+                    <h2>{{ 'home.h2-1' | translate }}</h2>
+                    <p>{{ 'home.p-3' | translate }}</p>
                 </ion-text>
             </ion-col>
             <ion-col size-xs="12" size-md="6">
                 <div class="video-image-tv">
                     <ion-img src="./assets/images/netflix-image-tv.png"></ion-img>
                     <video width="100%" autoplay playsinline muted loop>
-                        <source src="./assets/images/netflix-video-tv.m4v"
-                                type="video/mp4">
+                        <source src="./assets/images/netflix-video-tv.m4v" type="video/mp4">
                         Sorry, your browser doesn't support embedded videos.
                     </video>
                 </div>
@@ -79,17 +73,17 @@
                         <ion-img src="./assets/images/netflix-image-boxshot.png"></ion-img>
                     </ion-thumbnail>
                     <ion-label class="sc-ion-label-md-h sc-ion-label-md-s md hydrated">
-                        <h3>Stranger Things</h3>
-                        <p>Téléchargement en cours...</p>
+                        <h3>{{ 'home.h3-1' | translate }}</h3>
+                        <p>{{ 'home.p-4' | translate }}</p>
                     </ion-label>
                     <ion-img slot="end" src="./assets/images/netflix-icon-download.gif"></ion-img>
                 </ion-item>
-               
+
             </ion-col>
             <ion-col size-xs="12" size-md="6">
                 <ion-text color="light">
-                    <h2>Téléchargez vos séries préférées pour les regarder hors connexion.</h2>
-                    <p>Enregistrez vos programmes préférés et ayez toujours quelque chose à regarder.</p>
+                    <h2>{{ 'home.h2-2' | translate }}</h2>
+                    <p>{{ 'home.p-5' | translate }}</p>
                 </ion-text>
             </ion-col>
         </ion-row>
@@ -99,33 +93,32 @@
         <ion-row class="ion-align-items-center ion-padding">
             <ion-col size-xs="12" size-md="6">
                 <ion-text color="light">
-                    <h2>Où que vous soyez.</h2>
-                    <p>Regardez des films et séries TV en accès illimité sur votre TV, smartphone, tablette et ordinateur, tout compris.</p>
+                    <h2>{{ 'home.h2-3' | translate }}</h2>
+                    <p>{{ 'home.p-6' | translate }}</p>
                 </ion-text>
             </ion-col>
             <ion-col size-xs="12" size-md="6">
                 <div class="video-image-devices">
                     <ion-img src="./assets/images/netflix-image-device.png"></ion-img>
                     <video width="100%" autoplay playsinline muted loop>
-                        <source src="./assets/images/netflix-video-device.m4v"
-                                type="video/mp4">
+                        <source src="./assets/images/netflix-video-device.m4v" type="video/mp4">
                         Sorry, your browser doesn't support embedded videos.
                     </video>
                 </div>
             </ion-col>
         </ion-row>
 
-        
+
         <!-- fifth row section -->
         <ion-row class="ion-align-items-center ion-padding">
             <ion-col size-xs="12" size-md="6">
                 <ion-img src="./assets/images/netflix-image-children.png"></ion-img>
             </ion-col>
             <ion-col size-xs="12" size-md="6">
-            <ion-text color="light">
-                <h2>Créez des profils pour les enfants.</h2>
-                <p>Les enfants découvrent de nouvelles aventures et retrouvent leurs personnages préférés dans un espace bien à eux, déjà inclus dans votre abonnement.</p>
-            </ion-text>
+                <ion-text color="light">
+                    <h2>{{ 'home.h2-4' | translate }}</h2>
+                    <p>{{ 'home.p-7' | translate }}</p>
+                </ion-text>
             </ion-col>
         </ion-row>
 
@@ -133,37 +126,37 @@
         <!-- footer row section -->
         <ion-row class="footer ion-align-items-center ion-padding">
             <ion-col size="12" size-md="3">
-                <p>Des questions ? Appelez le 0800-561-554</p>
+                <p>{{ 'home.p-8' | translate }}</p>
                 <ul>
-                    <li>FAQ</li>
-                    <li>Relations Investisseurs</li>
-                    <li>Modes de lecture</li>
-                    <li>Mentions légales</li>
-                    <li>Seulement sur Netflix</li>
+                    <li>{{ 'home.li-1' | translate }}</li>
+                    <li>{{ 'home.li-2' | translate }}</li>
+                    <li>{{ 'home.li-3' | translate }}</li>
+                    <li>{{ 'home.li-4' | translate }}</li>
+                    <li>{{ 'home.li-5' | translate }}</li>
                 </ul>
             </ion-col>
             <ion-col size="12" size-md="3">
                 <ul>
-                    <li>Centre d'aide</li>
-                    <li>Recrutement</li>
-                    <li>Conditions d'utilisation</li>
-                    <li>Nous contacter</li>
+                    <li>{{ 'home.li-6' | translate }}</li>
+                    <li>{{ 'home.li-7' | translate }}</li>
+                    <li>{{ 'home.li-8' | translate }}</li>
+                    <li>{{ 'home.li-9' | translate }}</li>
                 </ul>
             </ion-col>
             <ion-col size="12" size-md="3">
                 <ul>
-                    <li>Compte</li>
-                    <li>Utiliser des cartes cadeaux</li>
-                    <li>Confidentialité</li>
-                    <li>Test de vitesse</li>
+                    <li>{{ 'home.li-10' | translate }}</li>
+                    <li>{{ 'home.li-11' | translate }}</li>
+                    <li>{{ 'home.li-12' | translate }}</li>
+                    <li>{{ 'home.li-13' | translate }}</li>
                 </ul>
             </ion-col>
             <ion-col size="12" size-md="3">
                 <ul>
-                    <li>Presse</li>
-                    <li>Acheter des cartes cadeaux</li>
-                    <li>Préférences de cookies</li>
-                    <li>Informations légales</li>
+                    <li>{{ 'home.li-14' | translate }}</li>
+                    <li>{{ 'home.li-15' | translate }}</li>
+                    <li>{{ 'home.li-16' | translate }}</li>
+                    <li>{{ 'home.li-17' | translate }}</li>
                 </ul>
             </ion-col>
         </ion-row>

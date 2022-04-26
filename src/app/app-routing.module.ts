@@ -11,6 +11,10 @@ const routes: Routes = [
     loadChildren: () => import('./features/movies/movies.module').then(m => m.MoviesModule)
   },
   {
+    path: 'popover',
+    loadChildren: () => import('./features/home/popover/popover.component').then(m => m.PopoverComponent)
+  },
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full'
